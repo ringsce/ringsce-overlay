@@ -1,0 +1,9 @@
+/Users/pedro/Projects/samurai-babel/src/kaytana/build/CMakeFiles/Kaytana.dir
+/Users/pedro/Projects/samurai-babel/src/kaytana/build/CMakeFiles/KaytanaLib.dir
+/Users/pedro/Projects/samurai-babel/src/kaytana/build/CMakeFiles/docs.dir
+/Users/pedro/Projects/samurai-babel/src/kaytana/build/CMakeFiles/edit_cache.dir
+/Users/pedro/Projects/samurai-babel/src/kaytana/build/CMakeFiles/rebuild_cache.dir
+/Users/pedro/Projects/samurai-babel/src/kaytana/build/CMakeFiles/Kaytana_autogen_timestamp_deps.dir
+/Users/pedro/Projects/samurai-babel/src/kaytana/build/CMakeFiles/Kaytana_autogen.dir
+/Users/pedro/Projects/samurai-babel/src/kaytana/build/CMakeFiles/KaytanaLib_autogen_timestamp_deps.dir
+/Users/pedro/Projects/samurai-babel/src/kaytana/build/CMakeFiles/KaytanaLib_autogen.dir

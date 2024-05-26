@@ -1,0 +1,6 @@
+# Hashes of file build rules.
+fed0de57baebc3ac40231bda09c51877 CMakeFiles/KaytanaLib_autogen
+fed0de57baebc3ac40231bda09c51877 CMakeFiles/Kaytana_autogen
+2ad455c573eede1516b7c1beecc57913 CMakeFiles/docs
+fda8a0569c5a27c77d25129c87f5632b KaytanaLib_autogen/timestamp
+45632adbea66e11e353e1ab487151593 Kaytana_autogen/timestamp

@@ -1,0 +1,1 @@
+set(__QT_DEPLOY_TARGET_KaytanaLib_FILE /Users/pedro/Projects/samurai-babel/src/kaytana/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/KaytanaLib)

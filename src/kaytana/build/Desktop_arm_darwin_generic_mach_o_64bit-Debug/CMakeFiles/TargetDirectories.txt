@@ -1,0 +1,9 @@
+/Users/pedro/Projects/samurai-babel/src/kaytana/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles/Kaytana.dir
+/Users/pedro/Projects/samurai-babel/src/kaytana/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles/KaytanaLib.dir
+/Users/pedro/Projects/samurai-babel/src/kaytana/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles/docs.dir
+/Users/pedro/Projects/samurai-babel/src/kaytana/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles/edit_cache.dir
+/Users/pedro/Projects/samurai-babel/src/kaytana/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles/rebuild_cache.dir
+/Users/pedro/Projects/samurai-babel/src/kaytana/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles/Kaytana_autogen_timestamp_deps.dir
+/Users/pedro/Projects/samurai-babel/src/kaytana/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles/Kaytana_autogen.dir
+/Users/pedro/Projects/samurai-babel/src/kaytana/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles/KaytanaLib_autogen_timestamp_deps.dir
+/Users/pedro/Projects/samurai-babel/src/kaytana/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles/KaytanaLib_autogen.dir

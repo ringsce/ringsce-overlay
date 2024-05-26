@@ -1,0 +1,114 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Kaytana",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Kaytana::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Kaytana-Debug-44c5672c57015a9f4f85.json",
+					"name" : "Kaytana",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "KaytanaLib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-KaytanaLib-Debug-4249c20b8bed74c4e5ed.json",
+					"name" : "KaytanaLib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "KaytanaLib_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-KaytanaLib_autogen-Debug-6fc3f7bf8fb7491d7e85.json",
+					"name" : "KaytanaLib_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "KaytanaLib_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-KaytanaLib_autogen_timestamp_deps-Debug-71d285a92f705e9f3d9b.json",
+					"name" : "KaytanaLib_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Kaytana_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Kaytana_autogen-Debug-ea20ff370382b1f69ce9.json",
+					"name" : "Kaytana_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Kaytana_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Kaytana_autogen_timestamp_deps-Debug-b9d857c985fdc2e9c875.json",
+					"name" : "Kaytana_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "docs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-docs-Debug-997dbdc512716d24b6f8.json",
+					"name" : "docs",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/pedro/Projects/samurai-babel/src/kaytana/build",
+		"source" : "/Users/pedro/Projects/samurai-babel/src/kaytana"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
