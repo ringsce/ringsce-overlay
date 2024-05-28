@@ -18,3 +18,9 @@ target_include_directories(patcher PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../include
 
 add_subdirectory(launch)
 add_subdirectory(patcher)
+add_subdirectory(zlib)
+add_subdirectory(SDL2)
+add_subdirectory(kayyte)
+add_subdirectory(libogg-1.3.3)
+add_subdirectory(curl-7.54.0)
+add_subdirectory(jpeg-8c)

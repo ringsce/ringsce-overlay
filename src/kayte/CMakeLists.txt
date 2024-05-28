@@ -19,9 +19,32 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Core Network Xml)
 set(PROJECT_SOURCES
     interpreter.cpp
     interpreter.h
-    Doxyfile.in
     main.cpp  # Include main.cpp for the example executable
+    bytecode_extensions.h  # Include bytecode_extensions.h for bytecode support
+    Doxyfile.in
 )
+
+# Generate object files from bytecode
+add_custom_command(
+    OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/bytecode_objects
+    COMMAND ${CMAKE_COMMAND} -E make_directory ${CMAKE_CURRENT_BINARY_DIR}/bytecode_objects
+    COMMAND your_bytecode_compiler ${CMAKE_CURRENT_SOURCE_DIR}/bytecode_file.bytecode -o ${CMAKE_CURRENT_BINARY_DIR}/bytecode_objects
+)
+
+# Add object files to library
+add_library(kayte STATIC ${PROJECT_SOURCES} ${CMAKE_CURRENT_BINARY_DIR}/bytecode_objects)
+
+# Set include directories if needed
+target_include_directories(kayte PUBLIC include)
+
+# Find and include the curl library
+find_package(CURL REQUIRED)
+target_include_directories(kayte PUBLIC ${CURL_INCLUDE_DIRS})
+target_link_libraries(kayte PUBLIC ${CURL_LIBRARIES})
+
+# Usage example
+add_executable(kayte main.cpp)
+target_link_libraries(kayte PRIVATE kayte)
 
 # Configure settings for different platforms
 if(ANDROID)

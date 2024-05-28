@@ -44,5 +44,9 @@ int main(int argc, char *argv[]) {
     QString partialKeyword = "be";
     qDebug() << "Suggestion for keyword:" << interpreter.suggestCompletion(partialKeyword);
 
+    std::string pk3_path = "system.pk3";
+    list_pk3_contents(pk3_path);
+    
+
     return app.exec();
 }

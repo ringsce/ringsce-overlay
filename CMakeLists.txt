@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 3.29)
-
-project(Kayte-lang VERSION 0.1.0 LANGUAGES CXX)
+project(Kayte-lang VERSION 0.1.0 LANGUAGES CXX kayte)
 
 # Enable automatic Qt features
 set(CMAKE_AUTOUIC ON)
@@ -20,7 +19,7 @@ elseif(APPLE)
     if(IOS)
         set(CMAKE_SYSTEM_NAME iOS)
         set(CMAKE_OSX_ARCHITECTURES "arm64")
-        set(CMAKE_IOS_DEPLOYMENT_TARGET 9.0)
+        set(CMAKE_IOS_DEPLOYMENT_TARGET 15.0)
     else()
         set(CMAKE_SYSTEM_NAME macOS)
         set(CMAKE_OSX_ARCHITECTURES "arm64")
@@ -46,7 +45,6 @@ set(DIRECTORIES
     "dir7"
     "dir8"
     "dir9"
-
 )
 
 # Function to check if a directory exists
@@ -81,8 +79,19 @@ foreach(dir ${DIRECTORIES})
     endif()
 endforeach()
 
+# Add curl library
+find_package(CURL REQUIRED)
+include_directories(${CURL_INCLUDE_DIRS})
+target_link_libraries(kayte PUBLIC ${CURL_LIBRARIES})
+
+# Configure Emscripten
+if(EMSCRIPTEN)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -s WASM=1")
+    set(CMAKE_EXECUTABLE_SUFFIX ".html")
+endif()
+
 # Example target (for demonstration purposes)
-add_executable(example main.cpp)
+# add_executable(example main.cpp)
 
 # Link directories to the target (if needed)
 foreach(dir ${DIRECTORIES})

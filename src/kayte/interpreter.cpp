@@ -1,8 +1,15 @@
-#include "interpreter.h"
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <string>
+#include <zlib.h>
+#include <zip.h>
 #include <QFile>
 #include <QTextStream>
 #include <QDebug>
 #include <algorithm>
+
+#include "interpreter.h"
 
 Interpreter::Interpreter(QObject *parent)
     : QObject(parent) {
@@ -130,6 +137,14 @@ QString Interpreter::translateToBytecode(const QString &pascalCode) {
             }
             QString value = tokens[1].mid(1, tokens[1].size() - 2); // Remove quotes
             stream << "WRITELN " << value << "\n";
+        } else if (tokens[0] == "pk3_read") {
+            // Assume pk3_read only takes one argument which is the path to the pk3 file
+            if (tokens.size() < 2 || !tokens[1].startsWith("'") || !tokens[1].endsWith("'")) {
+                qWarning() << "Invalid pk3_read statement:" << line;
+                continue;
+            }
+            QString pk3Path = tokens[1].mid(1, tokens[1].size() - 2); // Remove quotes
+            stream << "PK3_READ " << pk3Path << "\n";
         } else {
             // Unknown statement, ignore for now
             qWarning() << "Unknown statement:" << line;
@@ -139,8 +154,4 @@ QString Interpreter::translateToBytecode(const QString &pascalCode) {
     return bytecode;
 }
 
-QString Interpreter::interpretBytecode(const QString &bytecode) {
-    // Interpret bytecode using the virtual machine
-    // For demonstration, let's assume the bytecode is directly executable and returns a result.
-    return bytecode;
-}
+QString Interpreter::
