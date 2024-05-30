@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.29)
-project(Kayte-lang VERSION 0.1.0 LANGUAGES CXX D KAYTE)
+project(Kayte-lang VERSION 0.1.0 LANGUAGES CXX D)
 
 # Enable automatic Qt features
 set(CMAKE_AUTOUIC ON)
@@ -34,17 +34,38 @@ else()
     message(FATAL_ERROR "Unsupported platform")
 endif()
 
+# Find and set the D compiler
+find_program(CMAKE_D_COMPILER NAMES dmd ldc2 gdc)
+if(NOT CMAKE_D_COMPILER)
+    message(FATAL_ERROR "No D compiler found. Please install DMD, LDC, or GDC.")
+else()
+    set(CMAKE_D_COMPILER ${CMAKE_D_COMPILER} CACHE STRING "The D compiler")
+    message(STATUS "D compiler found: ${CMAKE_D_COMPILER}")
+endif()
+
+
+# Find and set the Kayte compiler
+find_program(CMAKE_KAYTE_COMPILER NAMES dmd ldc2 gdc)
+if(NOT CMAKE_KAYTE_COMPILER)
+    message(FATAL_ERROR "No Kayte compiler found. Please install DMD, LDC, or GDC.")
+else()
+    set(CMAKE_KAYTE_COMPILER ${CMAKE_D_COMPILER} CACHE STRING "The Kayte compiler")
+    message(STATUS "Kayte compiler found: ${CMAKE_KAYTE_COMPILER}")
+endif()
+
+
+
 # Define the directories to check
 set(DIRECTORIES
-    "dir1"
-    "dir2"
-    "dir3"
-    "dir4"
-    "dir5"
-    "dir6"
-    "dir7"
-    "dir8"
-    "dir9"
+    "src/kayte"
+    "src/jpeg-8c"
+    "src/curl-7.54.0"
+    "src/libogg-1.3.3"
+    "src/openal-soft"
+    "src/patcher"
+    "src/sdl"
+    "src/SDL2"
+    "src/zlib"
 )
 
 # Function to check if a directory exists
@@ -104,6 +125,12 @@ set(PROJECT_SOURCES
 set(DLANG_SOURCES
     src/kayte.d
 )
+
+# Add DLang sources
+set(KAYTELANG_SOURCES
+    src/main.kayte
+)
+
 
 # Add DLang sources to the project
 add_library(kayte STATIC ${PROJECT_SOURCES} ${DLANG_SOURCES})

@@ -1,0 +1,12 @@
+{
+	"authors": [
+		"Pedro Dias Vicente"
+	],
+	"copyright": "Copyright © 2024, Pedro Dias Vicente",
+	"dependencies": {
+		"dxml": "~>0.4.4"
+	},
+	"description": "A minimal D application.",
+	"license": "GPL-2.0-or-later",
+	"name": "parser"
+}

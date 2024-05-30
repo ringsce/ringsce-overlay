@@ -1,5 +1,4 @@
-#ifndef INTERPRETER_H
-#define INTERPRETER_H
+#pragma once
 
 #include <QObject>
 #include <QString>
@@ -89,5 +88,3 @@ namespace kayte {
         void run();
     };
 }
-
-#endif // INTERPRETER_H

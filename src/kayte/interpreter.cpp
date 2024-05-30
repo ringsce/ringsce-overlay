@@ -96,8 +96,8 @@ void Interpreter::initializeAI() {
 void Interpreter::initializeKeywords() {
     pascalKeywords = {
         "mod", "begin", "end", "break", "asm", "case", "const", "destructor", "array", "constructor", "Procedure", "word", "float", "double",
-        "div", "do", "downto", "else", "if", "for", "goto", "for", "function", "implementation", "nil", "interface", "not", "in",
-        "of", "on"
+        "div", "do", "downto", "else", "if", "for", "goto", "for", "function", "implementation", "nil", "interface", "not", "in", "@System",
+        "of", "on", "@safe"
     };
 }
 

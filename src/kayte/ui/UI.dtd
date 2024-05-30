@@ -1,0 +1,14 @@
+<!ELEMENT UI (Window+)>
+<!ELEMENT Window (Title, Content)>
+<!ELEMENT Title (#PCDATA)>
+<!ELEMENT Content (Map | MiniMap | AmmoCountChart | Buttons | ListView | Chart | Pie | ProgressBar)>
+<!ELEMENT Map (AxisX, AxisY)>
+<!ELEMENT MiniMap (AxisX, AxisY)>
+<!ELEMENT AmmoCountChart (AxisX, AxisY)>
+<!ELEMENT AxisX (#PCDATA)>
+<!ELEMENT AxisY (#PCDATA)>
+<!ELEMENT Buttons (#PCDATA)>
+<!ELEMENT ListView (#PCDATA)>
+<!ELEMENT Chart (#PCDATA)>
+<!ELEMENT Pie (#PCDATA)>
+<!ELEMENT ProgressBar (#PCDATA)>
