@@ -83,5 +83,11 @@ private:
      */
     void initializeKeywords();
 };
+namespace kayte {
+    class Interpreter {
+    public:
+        void run();
+    };
+}
 
 #endif // INTERPRETER_H

@@ -20,6 +20,8 @@ Interpreter::Interpreter(QObject *parent)
 Interpreter::~Interpreter() {
 }
 
+
+
 bool Interpreter::loadScript(const QString &scriptPath) {
     QFile file(scriptPath);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
@@ -43,6 +45,18 @@ QString Interpreter::run() {
 
     // Interpret the bytecode using the virtual machine
     QString result = interpretBytecode(bytecode);
+
+     HTMLParser htmlParser;
+    CSSParser cssParser;
+
+    // Sample HTML and CSS strings
+    std::string html = "<html><head><title>Test</title></head><body><h1>Hello, World!</h1></body></html>";
+    std::string css = "body { background-color: lightblue; } h1 { color: navy; }";
+
+    htmlParser.parse(html);
+    cssParser.parse(css);
+
+    std::cout << "HTML and CSS parsing completed." << std::endl;
 
     return result;
 }
