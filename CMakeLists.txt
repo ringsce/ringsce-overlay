@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.29)
-project(Kayte-lang VERSION 0.1.0 LANGUAGES CXX kayte)
+project(Kayte-lang VERSION 0.1.0 LANGUAGES CXX)
 
 # Enable automatic Qt features
 set(CMAKE_AUTOUIC ON)
@@ -29,6 +29,7 @@ elseif(UNIX AND NOT APPLE)
     set(CMAKE_SYSTEM_NAME Linux)
     if(CMAKE_SYSTEM_PROCESSOR STREQUAL "aarch64")
         set(CMAKE_SYSTEM_PROCESSOR arm64)
+        message(STATUS "Configuring for Linux on aarch64")
     endif()
 else()
     message(FATAL_ERROR "Unsupported platform")
@@ -99,3 +100,10 @@ foreach(dir ${DIRECTORIES})
         target_link_libraries(example ${dir})
     endif()
 endforeach()
+
+# Additional configurations for Raspberry Pi 3+
+if(CMAKE_SYSTEM_NAME STREQUAL "Linux" AND CMAKE_SYSTEM_PROCESSOR STREQUAL "armv7l")
+    message(STATUS "Configuring for Raspberry Pi 3+")
+    # Add Raspberry Pi specific options and flags here if needed
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=armv7-a -mfpu=neon-vfpv4 -mfloat-abi=hard")
+endif()
