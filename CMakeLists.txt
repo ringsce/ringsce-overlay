@@ -30,30 +30,30 @@ elseif(UNIX AND NOT APPLE)
     if(CMAKE_SYSTEM_PROCESSOR STREQUAL "aarch64")
         set(CMAKE_SYSTEM_PROCESSOR arm64)
     endif()
+elseif(WIN32)
+    if(CMAKE_SYSTEM_PROCESSOR STREQUAL "aarch64")
+        set(CMAKE_SYSTEM_NAME Windows)
+    else()
+        message(FATAL_ERROR "Unsupported processor for Windows platform")
+    endif()
 else()
     message(FATAL_ERROR "Unsupported platform")
 endif()
 
-# Find and set the D compiler
-find_program(CMAKE_D_COMPILER NAMES dmd ldc2 gdc)
+# Find and set the LLVM-based D compiler (LDC)
+find_program(CMAKE_D_COMPILER NAMES ldc2)
 if(NOT CMAKE_D_COMPILER)
-    message(FATAL_ERROR "No D compiler found. Please install DMD, LDC, or GDC.")
+    message(FATAL_ERROR "No LLVM-based D compiler (LDC) found. Please install LDC.")
 else()
-    set(CMAKE_D_COMPILER ${CMAKE_D_COMPILER} CACHE STRING "The D compiler")
-    message(STATUS "D compiler found: ${CMAKE_D_COMPILER}")
+    set(CMAKE_D_COMPILER ${CMAKE_D_COMPILER} CACHE STRING "The LLVM-based D compiler")
+    message(STATUS "LLVM-based D compiler found: ${CMAKE_D_COMPILER}")
 endif()
 
-
-# Find and set the Kayte compiler
-find_program(CMAKE_KAYTE_COMPILER NAMES dmd ldc2 gdc)
-if(NOT CMAKE_KAYTE_COMPILER)
-    message(FATAL_ERROR "No Kayte compiler found. Please install DMD, LDC, or GDC.")
-else()
-    set(CMAKE_KAYTE_COMPILER ${CMAKE_D_COMPILER} CACHE STRING "The Kayte compiler")
-    message(STATUS "Kayte compiler found: ${CMAKE_KAYTE_COMPILER}")
+# Set LLVM toolchain settings
+if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++")
+    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -lc++abi")
 endif()
-
-
 
 # Define the directories to check
 set(DIRECTORIES
@@ -126,12 +126,6 @@ set(DLANG_SOURCES
     src/kayte.d
 )
 
-# Add DLang sources
-set(KAYTELANG_SOURCES
-    src/main.kayte
-)
-
-
 # Add DLang sources to the project
 add_library(kayte STATIC ${PROJECT_SOURCES} ${DLANG_SOURCES})
 
@@ -198,5 +192,16 @@ if(Doxygen_FOUND)
         WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
         COMMENT "Generating API documentation with Doxygen"
         VERBATIM
+    )
+endif()
+
+# Add support for building Kayte as a DLL on Windows 11 ARM
+if(WIN32 AND CMAKE_SYSTEM_PROCESSOR MATCHES "aarch64")
+    add_library(kayte SHARED ${PROJECT_SOURCES} ${DLANG_SOURCES})
+    target_compile_definitions(kayte PRIVATE KAYTE_DLL)
+    set_target_properties(kayte PROPERTIES
+        WINDOWS_EXPORT_ALL_SYMBOLS ON
+        RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+        LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
     )
 endif()
