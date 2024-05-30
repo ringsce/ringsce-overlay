@@ -1,0 +1,274 @@
+
+// DMD compiler specification for Xcode 3
+// Copyright (c) 2007-2010  Michel Fortin
+//
+// Based on the D Xcode Compiler Plugin
+// Copyright (c) 2005-2006  Alan West
+//
+// For use with the Mac OS X DMD Compiler <http://www.digitalmars.com/d/>.
+// Note: the DMD executable is expected to be at: /usr/local/bin/dmd
+//
+// D for Xcode is free software; you can redistribute it and/or modify it 
+// under the terms of the GNU General Public License as published by the Free 
+// Software Foundation; either version 2 of the License, or (at your option) 
+// any later version.
+//
+// D for Xcode is distributed in the hope that it will be useful, but WITHOUT 
+// ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or 
+// FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for 
+// more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with D for Xcode; if not, write to the Free Software Foundation, 
+// Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA.
+
+{
+	Type = Compiler;
+	Identifier = com.michelf.dxcode.dmd;
+	Class = DXCompilerSpecificationDMD;
+	FileTypes = (sourcecode.d);
+	Name = "DMD System Version";
+	Description = "Digital Mars D, System Version";
+	Version = "Default";
+	ExecPath = "/usr/local/bin/dmd";
+//	Architectures = (i386);
+	SupportsZeroLink = NO;
+	SupportsPredictiveCompilation = YES;
+	SupportsHeadermaps = NO;
+	OptionsForCommandLinePrefix = "DMD_";
+	CommandOutputParser = (
+		("warning - (.*?)\\(([0-9]+)\\): (.*)", emit-warning),
+		("(.*?)\\(([0-9]+)\\): Error: (.*)", emit-error),
+		("(.*?)\\(([0-9]+)\\): (.*)", emit-error)
+	);
+
+	Options = (
+//		{
+//			Name = arch;
+//			CommandLineArgs = ( "-arch", "$(value)" );
+//		},
+
+		// Search Paths
+		{
+			Name = D_MODULE_SEARCH_PATHS;
+			Type = pathlist;
+			DefaultValue = "/usr/include/d";
+			CommonOption = YES;
+			CommandLineArgs = ("-I$(value)");
+			ConditionFlavors = ( "arch", "sdk" );
+			Category = SearchPaths;
+		},
+		{
+			Name = D_IMPORT_EXPRESSION_SEARCH_PATHS;
+			Type = pathlist;
+			DefaultValue = "";
+			CommonOption = YES;
+			CommandLineArgs = ("-J$(value)");
+			ConditionFlavors = ( "arch", "sdk" );
+			Category = SearchPaths;
+		},
+
+		// Language
+		{
+			Name = D_UNIT_TEST;
+			Type = bool;
+			DefaultValue = NO;
+			CommandLineArgs = { YES = ("-unittest"); NO = (); };
+			ConditionFlavors = ( "arch", "sdk" );
+			Category = Language;
+		},
+		{
+			Name = D_VERSION_IDENTIFIERS;
+			Type = stringlist;
+			DefaultValue = "";
+			CommandLineArgs = ( "-version=${0}" );
+			ConditionFlavors = ( "arch", "sdk" );
+			Category = Language;
+		},
+		{
+			Name = D_DEBUG_IDENTIFIERS;
+			Type = stringlist;
+			DefaultValue = "";
+			CommandLineArgs = ( "-debug=${0}" );
+			Condition = "$(GDC_ENABLE_DEBUG_CODE)";
+			ConditionFlavors = ( "arch", "sdk" );
+			Category = Language;
+		},
+		{
+			Name = D_ALLOW_DEPRECATED;
+			Type = bool;
+			DefaultValue = NO;
+			CommandLineArgs = { YES = (-deprecated); NO = (); };
+			ConditionFlavors = ( "arch", "sdk" );
+			Category = Language;
+		},
+		{
+			Name = DMD_OTHER_FLAGS;
+			Type = stringlist; 
+			DefaultValue = ""; 
+			Category = Language;
+			CommandLineArgs = ( "${0}" );
+			ConditionFlavors = ( "arch", "sdk" );
+			FileTypes = (sourcecode.d);
+		},
+		{
+			Name = DMD_INFO_TLS;
+			Type = bool;
+			DefaultValue = NO;
+			CommandLineArgs = { YES = (-vtls); NO = (); };
+			Category = Language;
+			CommonOption = NO;
+		},
+		
+		// Documentation
+		{
+			Name = D_DDOC;
+			Type = bool;
+			DefaultValue = NO;
+			CommandLineArgs = { YES = ("-D"); NO = (); };
+			ConditionFlavors = ( "arch", "sdk" );
+			Category = Documentation;
+			CommonOption = YES;
+		},
+		{
+			Name = D_DDOC_DIR;
+			Type = string; 
+			DefaultValue = "";
+			CommandLineArgs = { "" = (); "<<otherwise>>" = ( "-Dd${0}" ); };
+			Condition = "$(DMD_DDOC)";
+			AppearsOnCommandLineAfter = DMD_DDOC;
+			ConditionFlavors = ( "arch", "sdk" );
+			Category = Documentation;
+		},
+		{
+			Name = D_DDOC_FILENAME;
+			Type = string;
+			DefaultValue = "";
+			CommandLineArgs = { "" = (); "<<otherwise>>" = ( "-Df${0}" ); };
+			Condition = "$(DMD_DDOC)";
+			AppearsOnCommandLineAfter = DMD_DDOC;
+			ConditionFlavors = ( "arch", "sdk" );
+			Category = Documentation;
+		},
+		{
+			Name = D_DDOC_INCLUDES;
+			Type = stringlist; 
+			DefaultValue = "";
+			CommandLineArgs = ("${0}");
+			Condition = "$(DMD_DDOC)";
+			AppearsOnCommandLineAfter = DMD_DDOC;
+			ConditionFlavors = ( "arch", "sdk" );
+			Category = Documentation;
+		},
+		
+		// Code Generation
+		{
+			Name = DMD_ENABLE_RELEASE_CODE;
+			Type = bool;
+			DefaultValue = NO;
+			CommandLineArgs = { YES = (-release); NO = (); };
+			Category = CodeGeneration;
+			CommonOption = YES;
+			ConditionFlavors = ( "arch", "sdk" );
+		},
+		{
+			Name = DMD_DISABLE_BOUNDS_CHECK;
+			Type = bool;
+			DefaultValue = YES;
+			CommandLineArgs = { YES = (-noboundscheck); NO = (); };
+			Category = CodeGeneration;
+			CommonOption = YES;
+			AppearsOnCommandLineAfter = DMD_ENABLE_RELEASE_CODE;
+		},
+		{
+			Name = DMD_INLINE_FUNCTIONS;
+			Type = bool;
+			DefaultValue = NO;
+			CommandLineArgs = { YES = (-inline); NO = (); };
+			Category = CodeGeneration;
+			ConditionFlavors = ( "arch", "sdk" );
+			AppearsOnCommandLineAfter = DMD_ENABLE_RELEASE_CODE;
+		},
+		{
+			Name = DMD_OPTIMIZATION;
+			Type = bool;
+			DefaultValue = "$(GCC_OPTIMIZATION_LEVEL)";
+			CommandLineArgs = ("-O");
+			Category = CodeGeneration;
+			ConditionFlavors = ( "arch", "sdk" );
+			AppearsOnCommandLineAfter = DMD_ENABLE_RELEASE_CODE;
+		},
+		{
+			Name = DMD_ENABLE_DEBUG_CODE;
+			Type = bool;
+			DefaultValue = NO;
+			CommandLineArgs = { YES = (-debug); NO = (); };
+			Category = CodeGeneration;
+			ConditionFlavors = ( "arch", "sdk" );
+			CommonOption = YES;
+		},
+		
+		{
+			Name = DMD_GENERATE_DEBUGGING_SYMBOLS;
+			Type = bool;
+//			DefaultValue = YES;
+			DefaultValue = "$(GCC_GENERATE_DEBUGGING_SYMBOLS)";
+			Category = CodeGeneration;
+			ConditionFlavors = ( "arch", "sdk" );
+			AppearsOnCommandLineAfter = DMD_ENABLE_DEBUG_CODE;
+		},
+		{
+			Name = DMD_DEBUGGING_SYMBOLS;
+			Type = enum;
+			AllowedValues = (default, c-compatible);
+//			DefaultValue = default;
+			DefaultValue = "$(GCC_DEBUGGING_SYMBOLS)";
+			CommandLineArgs = { default = (-g); c-compatible = (-gc); };
+			Condition = "$(DMD_GENERATE_DEBUGGING_SYMBOLS)";
+			Category = CodeGeneration;
+			ConditionFlavors = ( "arch", "sdk" );
+			AppearsOnCommandLineAfter = DMD_GENERATE_DEBUGGING_SYMBOLS;
+		},
+
+        // Warnings
+		{
+			Name = DMD_WARNINGS;
+			Type = bool;
+			DefaultValue = NO;
+			Category = Language;
+			CommonOption = YES;
+			ConditionFlavors = ( "arch", "sdk" );
+		},
+		{
+			Name = DMD_INFORMATIONAL_WARNINGS;
+			Type = bool;
+			DefaultValue = YES;
+			CommandLineArgs = { YES = (-wi); NO = (-w); };
+			Condition = "$(DMD_WARNINGS)";
+			Category = Language;
+			ConditionFlavors = ( "arch", "sdk" );
+			AppearsOnCommandLineAfter = GDC_WARNINGS;
+		},
+	);
+	
+	
+	OptionCategories = (
+		{
+			Name = SearchPaths;
+			IconName = "DX-option-language-d";
+		},
+		{
+			Name = Language;
+			IconName = "DX-option-language-d";
+		},
+		{
+			Name = CodeGeneration;
+			IconName = "DX-option-language-d";
+		},
+		{
+			Name = Documentation;
+			IconName = "DX-option-language-d";
+		}
+	);
+
+}
