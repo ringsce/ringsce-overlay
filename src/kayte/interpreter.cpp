@@ -46,7 +46,7 @@ QString Interpreter::run() {
     // Interpret the bytecode using the virtual machine
     QString result = interpretBytecode(bytecode);
 
-     HTMLParser htmlParser;
+    HTMLParser htmlParser;
     CSSParser cssParser;
 
     // Sample HTML and CSS strings
@@ -167,5 +167,3 @@ QString Interpreter::translateToBytecode(const QString &pascalCode) {
 
     return bytecode;
 }
-
-QString Interpreter::
