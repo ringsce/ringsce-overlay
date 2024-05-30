@@ -9,7 +9,7 @@
 #
 # See LICENSE for details.
 #
-cmake_minimum_required(VERSION 2.8.1)
+cmake_minimum_required(VERSION 3.10)
 project(cmake-d NONE)
 
 set(MOD_SRCS
@@ -32,11 +32,7 @@ set(MOD_SRCS
 set(PLAT_SRCS
 	Platform/Darwin-dmd.cmake
 	Platform/Darwin-ldc2.cmake
-	Platform/Linux-dmd.cmake
-	Platform/Linux-gdc.cmake 
-	Platform/Linux-ldc2.cmake 
-	Platform/Windows-dmd.cmake              
-	Platform/Windows-gdc.cmake
+	
 )
 
 install(FILES ${MOD_SRCS} DESTINATION ${CMAKE_ROOT}/Modules)

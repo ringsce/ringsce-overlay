@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.29)
-project(Kayte-lang VERSION 0.1.0 LANGUAGES CXX D) # Added D language
+project(Kayte-lang VERSION 0.1.0 LANGUAGES CXX D KAYTE)
 
 # Enable automatic Qt features
 set(CMAKE_AUTOUIC ON)
@@ -29,11 +29,6 @@ elseif(UNIX AND NOT APPLE)
     set(CMAKE_SYSTEM_NAME Linux)
     if(CMAKE_SYSTEM_PROCESSOR STREQUAL "aarch64")
         set(CMAKE_SYSTEM_PROCESSOR arm64)
-        message(STATUS "Configuring for Linux on aarch64")
-    elseif(CMAKE_SYSTEM_PROCESSOR STREQUAL "armv7l")
-        message(STATUS "Configuring for Raspberry Pi 3+")
-        # Add Raspberry Pi specific options and flags here if needed
-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=armv7-a -mfpu=neon-vfpv4 -mfloat-abi=hard")
     endif()
 else()
     message(FATAL_ERROR "Unsupported platform")
@@ -95,32 +90,74 @@ if(EMSCRIPTEN)
     set(CMAKE_EXECUTABLE_SUFFIX ".html")
 endif()
 
-# Define project sources for C++ and D
-set(PROJECT_SOURCES_CPP
+# Define project sources
+set(PROJECT_SOURCES
     interpreter.cpp
     interpreter.h
     main.cpp  # Include main.cpp for the example executable
     bytecode_extensions.h  # Include bytecode_extensions.h for bytecode support
+    Doxyfile.in
+    ${CMAKE_CURRENT_BINARY_DIR}/bytecode_objects  # Add bytecode object files
 )
 
-set(PROJECT_SOURCES_D
-    example.d  # Add your D source files here
+# Add DLang sources
+set(DLANG_SOURCES
+    src/kayte.d
 )
 
-# Add libraries and executables for C++
-add_library(kayte STATIC ${PROJECT_SOURCES_CPP} ${CMAKE_CURRENT_BINARY_DIR}/bytecode_objects)
+# Add DLang sources to the project
+add_library(kayte STATIC ${PROJECT_SOURCES} ${DLANG_SOURCES})
+
+# Set include directories if needed
 target_include_directories(kayte PUBLIC include)
-add_executable(kayte_executable main.cpp)
-target_link_libraries(kayte_executable PRIVATE kayte)
 
-# Add libraries and executables for D
-add_library(kayte_d STATIC ${PROJECT_SOURCES_D})
-add_executable(kayte_d_executable example.d)
-target_link_libraries(kayte_d_executable PRIVATE kayte_d)
+# Example target (for demonstration purposes)
+add_executable(kayte_exe main.cpp)
+target_link_libraries(kayte_exe PRIVATE kayte)
+
+# Configure settings for different platforms
+if(ANDROID)
+    message(STATUS "Configuring for Android")
+    set(PLATFORM_SPECIFIC_SOURCES
+        # Add any Android-specific sources here
+    )
+elseif(WIN32 AND CMAKE_SYSTEM_PROCESSOR MATCHES "aarch64")
+    message(STATUS "Configuring for Windows 11 ARM")
+    set(PLATFORM_SPECIFIC_SOURCES
+        # Add any Windows 11 ARM-specific sources here
+    )
+elseif(UNIX AND CMAKE_SYSTEM_PROCESSOR MATCHES "aarch64")
+    message(STATUS "Configuring for Linux ARM")
+    set(PLATFORM_SPECIFIC_SOURCES
+        # Add any Linux ARM-specific sources here
+    )
+else()
+    message(WARNING "Platform not explicitly supported. Default configuration applied.")
+endif()
+
+# Include the platform-specific sources in the build
+if(PLATFORM_SPECIFIC_SOURCES)
+    list(APPEND PROJECT_SOURCES ${PLATFORM_SPECIFIC_SOURCES})
+endif()
+
+# Add the Kaytana library target
+add_library(Kaytana STATIC ${PROJECT_SOURCES} bytecode_extensions.h)
+
+# Set platform-specific properties if needed
+if(ANDROID)
+    # Android-specific configurations
+elseif(WIN32 AND CMAKE_SYSTEM_PROCESSOR MATCHES "aarch64")
+    # Windows 11 ARM-specific configurations
+elseif(UNIX AND CMAKE_SYSTEM_PROCESSOR MATCHES "aarch64")
+    # Linux ARM-specific configurations
+endif()
 
 # Link Qt libraries to the Kaytana library
-target_link_libraries(kayte PRIVATE Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Xml)
-target_link_libraries(kayte_executable PRIVATE Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Xml)
+target_link_libraries(Kaytana PRIVATE Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Xml)
+
+# Add the example executable that links to the Kaytana library
+add_executable(KaytanaLib main.cpp)
+target_link_libraries(KaytanaLib PRIVATE Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Xml Kaytana)
 
 # Configure Doxyfile for documentation generation
 set(DOXYGEN_OUTPUT_DIR ${CMAKE_BINARY_DIR}/doxygen)
