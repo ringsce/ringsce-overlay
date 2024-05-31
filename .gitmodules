@@ -1,0 +1,3 @@
+[submodule "ringsce-editor"]
+	path = ringsce-editor
+	url = https://github.com/ringsce/ringsce-editor.git
