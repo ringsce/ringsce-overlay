@@ -74,7 +74,7 @@
 		1ECA60C10CF7CB2F006CECB1 /* DXLauncherRegistration.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1AC00B0CF68A970014F648 /* DXLauncherRegistration.m */; };
 		1ECD120D107105FD00CFD074 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		1ECD1236107107A800CFD074 /* DXUISetup.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ECD1235107107A800CFD074 /* DXUISetup.m */; };
-		1ECD12481071092400CFD074 /* D for Xcode UI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1ECD1230107105FD00CFD074 /* D for Xcode UI.bundle */; };
+		1ECD12481071092400CFD074 /* Kayte for Xcode UI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1ECD1230107105FD00CFD074 /* Kayte for Xcode UI.bundle */; };
 		1ECD13211072513D00CFD074 /* DXDCommentScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EED03CE10528687001CA3B8 /* DXDCommentScanner.m */; };
 		1ED40E260CF001C3005C46B3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1ED40E250CF001C3005C46B3 /* InfoPlist.strings */; };
 		1EDC1114105289000087E1DF /* DXDCommentScannerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDC1111105287FB0087E1DF /* DXDCommentScannerTest.m */; };
@@ -198,7 +198,7 @@
 		1EC647B40DABA85300DD52F0 /* Unit Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unit Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EC647B50DABA85300DD52F0 /* Unit Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Unit Tests-Info.plist"; sourceTree = SOURCE_ROOT; };
 		1EC647BA0DABA8D400DD52F0 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = /Xcode3.0/Library/Frameworks/SenTestingKit.framework; sourceTree = "<absolute>"; };
-		1ECD1230107105FD00CFD074 /* D for Xcode UI.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "D for Xcode UI.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1ECD1230107105FD00CFD074 /* Kayte for Xcode UI.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Kayte for Xcode UI.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ECD1234107107A800CFD074 /* DXUISetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXUISetup.h; sourceTree = "<group>"; };
 		1ECD1235107107A800CFD074 /* DXUISetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXUISetup.m; sourceTree = "<group>"; };
 		1EDC1110105287FB0087E1DF /* DXDCommentScannerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDCommentScannerTest.h; sourceTree = "<group>"; };
@@ -239,7 +239,7 @@
 		6DB1DD8608B3A289004F6FFB /* d.pbfilespec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.pbfilespec; path = d.pbfilespec; sourceTree = "<group>"; };
 		6DB1DD8708B3A289004F6FFB /* gdc.pbcompspec */ = {isa = PBXFileReference; explicitFileType = text.plist; fileEncoding = 4; path = gdc.pbcompspec; sourceTree = "<group>"; };
 		6DB1DD8808B3A289004F6FFB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6DB1DDED08B3A33A004F6FFB /* D for Xcode.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "D for Xcode.xcplugin"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DB1DDED08B3A33A004F6FFB /* Kayte for Xcode.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Kayte for Xcode.xcplugin"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DD2FA0808C39D51003CE4D3 /* XCPBuildSystem.m */ = {isa = PBXFileReference; fileEncoding = 5; lastKnownFileType = sourcecode.c.objc; name = XCPBuildSystem.m; path = Headers/XCPBuildSystem.m; sourceTree = "<group>"; };
 		EB2BDB4B2C0B260A008A13D4 /* Launcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Launcher.m; path = "Launcher App/Launcher.m"; sourceTree = "<group>"; };
 		EB3C16D82C0891DB00EBEE78 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -370,8 +370,8 @@
 		19C28FB8FE9D52D311CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6DB1DDED08B3A33A004F6FFB /* D for Xcode.xcplugin */,
-				1ECD1230107105FD00CFD074 /* D for Xcode UI.bundle */,
+				6DB1DDED08B3A33A004F6FFB /* Kayte for Xcode.xcplugin */,
+				1ECD1230107105FD00CFD074 /* Kayte for Xcode UI.bundle */,
 				1E23D71A0CED5365005859B9 /* D for Xcode Launcher.app */,
 				1EC647B40DABA85300DD52F0 /* Unit Tests.octest */,
 				1EF3C75B115298B8001B82F7 /* dmd1-redirect */,
@@ -497,9 +497,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1E23D7190CED5365005859B9 /* D for Xcode Launcher */ = {
+		1E23D7190CED5365005859B9 /* Kayte for Xcode Launcher */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1E23D71D0CED5366005859B9 /* Build configuration list for PBXNativeTarget "D for Xcode Launcher" */;
+			buildConfigurationList = 1E23D71D0CED5366005859B9 /* Build configuration list for PBXNativeTarget "Kayte for Xcode Launcher" */;
 			buildPhases = (
 				1E23D7160CED5365005859B9 /* Resources */,
 				1E23D7170CED5365005859B9 /* Sources */,
@@ -509,7 +509,7 @@
 			);
 			dependencies = (
 			);
-			name = "D for Xcode Launcher";
+			name = "Kayte for Xcode Launcher";
 			productName = "Icon Registrator";
 			productReference = 1E23D71A0CED5365005859B9 /* D for Xcode Launcher.app */;
 			productType = "com.apple.product-type.application";
@@ -532,9 +532,9 @@
 			productReference = 1EC647B40DABA85300DD52F0 /* Unit Tests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
-		1ECD11F7107105FD00CFD074 /* D for Xcode UI */ = {
+		1ECD11F7107105FD00CFD074 /* Kayte for Xcode UI */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1ECD122D107105FD00CFD074 /* Build configuration list for PBXNativeTarget "D for Xcode UI" */;
+			buildConfigurationList = 1ECD122D107105FD00CFD074 /* Build configuration list for PBXNativeTarget "Kayte for Xcode UI" */;
 			buildPhases = (
 				1ECD11FE107105FD00CFD074 /* Sources */,
 				1ECD120C107105FD00CFD074 /* Frameworks */,
@@ -544,15 +544,15 @@
 			);
 			dependencies = (
 			);
-			name = "D for Xcode UI";
+			name = "Kayte for Xcode UI";
 			productInstallPath = "$(HOME)/Library/Bundles";
 			productName = OCamlPlugin;
-			productReference = 1ECD1230107105FD00CFD074 /* D for Xcode UI.bundle */;
+			productReference = 1ECD1230107105FD00CFD074 /* Kayte for Xcode UI.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
-		1EF3C75A115298B8001B82F7 /* dmd1-redirect */ = {
+		1EF3C75A115298B8001B82F7 /* kdc1-redirect */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1EF3C75F115298D7001B82F7 /* Build configuration list for PBXNativeTarget "dmd1-redirect" */;
+			buildConfigurationList = 1EF3C75F115298D7001B82F7 /* Build configuration list for PBXNativeTarget "kdc1-redirect" */;
 			buildPhases = (
 				1EF3C758115298B8001B82F7 /* Sources */,
 				1EF3C759115298B8001B82F7 /* Frameworks */,
@@ -561,14 +561,14 @@
 			);
 			dependencies = (
 			);
-			name = "dmd1-redirect";
+			name = "kdc1-redirect";
 			productName = "dmd-redirect";
 			productReference = 1EF3C75B115298B8001B82F7 /* dmd1-redirect */;
 			productType = "com.apple.product-type.tool";
 		};
-		1EF3C77111529A2F001B82F7 /* dmd2-redirect */ = {
+		1EF3C77111529A2F001B82F7 /* kdc2-redirect */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1EF3C77511529A2F001B82F7 /* Build configuration list for PBXNativeTarget "dmd2-redirect" */;
+			buildConfigurationList = 1EF3C77511529A2F001B82F7 /* Build configuration list for PBXNativeTarget "kdc2-redirect" */;
 			buildPhases = (
 				1EF3C77211529A2F001B82F7 /* Sources */,
 				1EF3C77411529A2F001B82F7 /* Frameworks */,
@@ -577,14 +577,14 @@
 			);
 			dependencies = (
 			);
-			name = "dmd2-redirect";
+			name = "kdc2-redirect";
 			productName = "dmd-redirect";
 			productReference = 1EF3C77811529A2F001B82F7 /* dmd2-redirect */;
 			productType = "com.apple.product-type.tool";
 		};
-		8D5B49AC048680CD000E48DA /* D for Xcode */ = {
+		8D5B49AC048680CD000E48DA /* Kayte for Xcode */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6D4E1A5D08560B2700084599 /* Build configuration list for PBXNativeTarget "D for Xcode" */;
+			buildConfigurationList = 6D4E1A5D08560B2700084599 /* Build configuration list for PBXNativeTarget "Kayte for Xcode" */;
 			buildPhases = (
 				8D5B49B1048680CD000E48DA /* Sources */,
 				8D5B49B3048680CD000E48DA /* Frameworks */,
@@ -598,10 +598,10 @@
 				1ECD1244107108D400CFD074 /* PBXTargetDependency */,
 				1E23D7230CED538F005859B9 /* PBXTargetDependency */,
 			);
-			name = "D for Xcode";
+			name = "Kayte for Xcode";
 			productInstallPath = "$(HOME)/Library/Bundles";
 			productName = OCamlPlugin;
-			productReference = 6DB1DDED08B3A33A004F6FFB /* D for Xcode.xcplugin */;
+			productReference = 6DB1DDED08B3A33A004F6FFB /* Kayte for Xcode.xcplugin */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -625,12 +625,12 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8D5B49AC048680CD000E48DA /* D for Xcode */,
-				1ECD11F7107105FD00CFD074 /* D for Xcode UI */,
-				1E23D7190CED5365005859B9 /* D for Xcode Launcher */,
+				8D5B49AC048680CD000E48DA /* Kayte for Xcode */,
+				1ECD11F7107105FD00CFD074 /* Kayte for Xcode UI */,
+				1E23D7190CED5365005859B9 /* Kayte for Xcode Launcher */,
 				1EC647B30DABA85300DD52F0 /* Unit Tests */,
-				1EF3C75A115298B8001B82F7 /* dmd1-redirect */,
-				1EF3C77111529A2F001B82F7 /* dmd2-redirect */,
+				1EF3C75A115298B8001B82F7 /* kdc1-redirect */,
+				1EF3C77111529A2F001B82F7 /* kdc2-redirect */,
 				1EF3C7D411539BD0001B82F7 /* D for Xcode.mpkg */,
 			);
 		};
@@ -694,7 +694,7 @@
 				1E1FCFAD101DDC9200D2919D /* dmd2.xcspec in Resources */,
 				1E7857A3101F6FA000FA2061 /* dmd2.pblinkspec in Resources */,
 				1E1D9D5C10222B8D006DE134 /* com.michelf.dxcode.dmd.strings in Resources */,
-				1ECD12481071092400CFD074 /* D for Xcode UI.bundle in Resources */,
+				1ECD12481071092400CFD074 /* Kayte for Xcode UI.bundle in Resources */,
 				1E42460812BE66E200CF7386 /* D for Xcode.xcplugindata in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -831,27 +831,27 @@
 /* Begin PBXTargetDependency section */
 		1E23D7230CED538F005859B9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1E23D7190CED5365005859B9 /* D for Xcode Launcher */;
+			target = 1E23D7190CED5365005859B9 /* Kayte for Xcode Launcher */;
 			targetProxy = 1E23D7220CED538F005859B9 /* PBXContainerItemProxy */;
 		};
 		1ECD1244107108D400CFD074 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1ECD11F7107105FD00CFD074 /* D for Xcode UI */;
+			target = 1ECD11F7107105FD00CFD074 /* Kayte for Xcode UI */;
 			targetProxy = 1ECD1243107108D400CFD074 /* PBXContainerItemProxy */;
 		};
 		1EF3C7DE1153A772001B82F7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1EF3C77111529A2F001B82F7 /* dmd2-redirect */;
+			target = 1EF3C77111529A2F001B82F7 /* kdc2-redirect */;
 			targetProxy = 1EF3C7DD1153A772001B82F7 /* PBXContainerItemProxy */;
 		};
 		1EF3C7E01153A774001B82F7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1EF3C75A115298B8001B82F7 /* dmd1-redirect */;
+			target = 1EF3C75A115298B8001B82F7 /* kdc1-redirect */;
 			targetProxy = 1EF3C7DF1153A774001B82F7 /* PBXContainerItemProxy */;
 		};
 		1EF3C7E21153A777001B82F7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8D5B49AC048680CD000E48DA /* D for Xcode */;
+			target = 8D5B49AC048680CD000E48DA /* Kayte for Xcode */;
 			targetProxy = 1EF3C7E11153A777001B82F7 /* PBXContainerItemProxy */;
 		};
 		1EF3C8261153AAF3001B82F7 /* PBXTargetDependency */ = {
@@ -894,13 +894,15 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				DEAD_CODE_STRIPPING = YES;
 				"DEVELOPMENT_TEAM[sdk=macosx*]" = XJX8PUCD89;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = "Launcher App/Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.michelf.dxcode.launcher;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kd.kxcode.launcher;
 				PRODUCT_NAME = "D for Xcode Launcher";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -910,13 +912,15 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				COPY_PHASE_STRIP = YES;
 				DEAD_CODE_STRIPPING = YES;
 				"DEVELOPMENT_TEAM[sdk=macosx*]" = XJX8PUCD89;
 				INFOPLIST_FILE = "Launcher App/Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.michelf.dxcode.launcher;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kd.kxcode.launcher;
 				PRODUCT_NAME = "D for Xcode Launcher";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -927,6 +931,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = XJX8PUCD89;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
@@ -959,6 +964,7 @@
 				COPY_PHASE_STRIP = YES;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = XJX8PUCD89;
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SDK_DIR)/System/Library/Frameworks\"";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -986,6 +992,7 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				DEAD_CODE_STRIPPING = YES;
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = XJX8PUCD89;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GENERATE_PKGINFO_FILE = YES;
 				INSTALL_PATH = "$(HOME)/Library/Application Support/Apple/Plugins/";
@@ -1003,6 +1010,7 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				DEAD_CODE_STRIPPING = YES;
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = XJX8PUCD89;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GENERATE_PKGINFO_FILE = YES;
 				INSTALL_PATH = "$(HOME)/Library/Application Support/Developer/2.5/Xcode/Plugins/";
@@ -1023,6 +1031,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = XJX8PUCD89;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1049,6 +1058,7 @@
 				COPY_PHASE_STRIP = YES;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = XJX8PUCD89;
 				GCC_MODEL_TUNING = G5;
 				GCC_PREPROCESSOR_DEFINITIONS = "DX_DMD_PATH='\"/Library/Compilers/dmd/osx/bin/dmd\"'";
 				INSTALL_PATH = /usr/local/bin;
@@ -1073,6 +1083,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = XJX8PUCD89;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1099,6 +1110,7 @@
 				COPY_PHASE_STRIP = YES;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = XJX8PUCD89;
 				GCC_MODEL_TUNING = G5;
 				GCC_PREPROCESSOR_DEFINITIONS = "DX_DMD_PATH='\"/Library/Compilers/dmd2/osx/bin/dmd\"'";
 				INSTALL_PATH = /usr/local/bin;
@@ -1157,7 +1169,7 @@
 					"-undefined",
 					dynamic_lookup,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.michelf.dxcode;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kd.kxcode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xcplugin;
 			};
@@ -1179,7 +1191,7 @@
 					"-undefined",
 					dynamic_lookup,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.michelf.dxcode;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kd.kxcode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xcplugin;
 			};
@@ -1276,7 +1288,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1E23D71D0CED5366005859B9 /* Build configuration list for PBXNativeTarget "D for Xcode Launcher" */ = {
+		1E23D71D0CED5366005859B9 /* Build configuration list for PBXNativeTarget "Kayte for Xcode Launcher" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1E23D71E0CED5366005859B9 /* Debug */,
@@ -1294,7 +1306,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1ECD122D107105FD00CFD074 /* Build configuration list for PBXNativeTarget "D for Xcode UI" */ = {
+		1ECD122D107105FD00CFD074 /* Build configuration list for PBXNativeTarget "Kayte for Xcode UI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1ECD122E107105FD00CFD074 /* Debug */,
@@ -1303,7 +1315,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1EF3C75F115298D7001B82F7 /* Build configuration list for PBXNativeTarget "dmd1-redirect" */ = {
+		1EF3C75F115298D7001B82F7 /* Build configuration list for PBXNativeTarget "kdc1-redirect" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1EF3C75D115298B9001B82F7 /* Debug */,
@@ -1312,7 +1324,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1EF3C77511529A2F001B82F7 /* Build configuration list for PBXNativeTarget "dmd2-redirect" */ = {
+		1EF3C77511529A2F001B82F7 /* Build configuration list for PBXNativeTarget "kdc2-redirect" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1EF3C77611529A2F001B82F7 /* Debug */,
@@ -1330,7 +1342,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6D4E1A5D08560B2700084599 /* Build configuration list for PBXNativeTarget "D for Xcode" */ = {
+		6D4E1A5D08560B2700084599 /* Build configuration list for PBXNativeTarget "Kayte for Xcode" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6D4E1A5E08560B2700084599 /* Debug */,
