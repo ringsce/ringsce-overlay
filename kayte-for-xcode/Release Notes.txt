@@ -1,0 +1,100 @@
+D for Xcode: Release Notes
+==========================
+
+D fox Xcode integrates syntax highlight and code folding for D source files and
+integrates the DMD and GDC compilers in the build system.
+
+
+Known Issues:
+
+*   Debugger support is mostly lacking. You'll be able to see a backtrace of
+    mangled function names, but that's all the GNU Debugger is able to see from 
+    executables compiled by DMD at this time. Breakpoints are not supported. 
+    Executables compiled with GDC might actually be usable for debugging, but 
+    this hasn't been tested for a while.
+
+*   Syntax-aware indentation is sometime wrong for constructs which are not present
+    in C++/Objective-C, like `foreach`. It's uncertain if this can be fixed. You 
+    can disable syntax-aware indentation from Xcode preferences if this bothers you.
+
+*   Code completion isn't done very intelligently at this time. It'll just 
+    propose keywords and identifiers found in the same document.
+
+*   There is no indexing support for D source files. It is therefore not possible
+    to use jump to definition or similar commands. 
+
+
+D for Xcode 1.2.2 (28 Mar 2011)
+
+*	Fixed an issue with the directory layout of DMD 2.052.
+
+
+D for Xcode 1.2.1 (16 Jan 2011)
+
+*	Fixed a link failure complaining about a missing "druntime" library on 
+	some systems.
+
+*	Preliminary but very incomplete support for Xcode 4 beta.
+
+
+D for Xcode 1.2 (21 Mar 2010)
+
+*	Added an installer package. A default install will download and install 
+	the latest version of the DMD 2.x and 1.x compiler in /Library/Compilers/.
+	
+	The installer package will add the proper symbolic links in /usr/local/ 
+	to make DMD work properly without fussing with your `PATH` environment 
+	variable. The `dmd2` command invokes DMD 2.x while `dmd1` invokes 
+	DMD 1.x. `dmd` maps to one of these two (`dmd2` by default but you can 
+	change this with `setdmd`).
+
+*	Updated the keyword list for syntax highlighting, improved code folding, 
+	and other enhancements in the source scanner.
+	
+*	Added special scanner code for strings and comments in Xcode 3. Nested 
+	comment and all D string syntaxes are now correctly highlighted as strings.
+
+*	D files are now recognized correctly by default in Xcode 3. Previously they
+	were assinged the sourcecode.dtrace type (which shares the same file 
+	extension); now sourcecode.d takes precedence when files are added to a 
+	project. You can manually change the file type from the file info panel 
+	in Xcode.
+
+*	Fixed the dependency tree generation which was broken by Xcode 3.1.
+
+*	Got rid of the embedded DMD front end for syntax highlighting, now using 
+	a custom lightweight parser for dependency scanning and a custom source 
+	scanner for syntax highlighing in Xcode 2.x.
+
+*	Removed support for the outline menu in Xcode 2.x which was using the DMD
+	front end and was too time-consuming to keep up to date. The outline is 
+	still available in Xcode 3 based on its newer source scanning facilities.
+
+
+1.1b2 (21 Sep 2008):
+
+*	Improved code folding.
+
+*	Fixed a problem where a wrong linker command was issued under Xcode 3.1.
+
+
+1.1b1 (31 May 2008):
+
+*	Updated the build process and other parts of the plugin to work with
+	Xcode 3 on Leopard. The plugin continue to work with all previously
+	supported versions of Xcode (2.4 and 2.5).
+
+*	Created a new set of rules for syntax highlighting suitable for Xcode 3
+	and allowing code folding.
+
+
+1.0.1 (23 Nov 2007)
+
+*	The plugin now registers its launcher application when loaded into Xcode.
+	Previously it was counting on the Finder to register it while copying the
+	plugin, but that isn't always reliable; hence the need for a backup plan.
+
+
+1.0 (21 Oct 2007):
+
+Initial release.
