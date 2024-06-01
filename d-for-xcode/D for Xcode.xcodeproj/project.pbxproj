@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -40,7 +40,6 @@
 		1E1FCFA8101DD7B400D2919D /* dmd1.pbcompspec in Resources */ = {isa = PBXBuildFile; fileRef = 1E1FCFA6101DD7B400D2919D /* dmd1.pbcompspec */; };
 		1E1FCFAC101DDC9200D2919D /* dmd2.pbcompspec in Resources */ = {isa = PBXBuildFile; fileRef = 1E1FCFAA101DDC9200D2919D /* dmd2.pbcompspec */; };
 		1E1FCFAD101DDC9200D2919D /* dmd2.xcspec in Resources */ = {isa = PBXBuildFile; fileRef = 1E1FCFAB101DDC9200D2919D /* dmd2.xcspec */; };
-		1E23D7380CED5488005859B9 /* Launcher.c in Sources */ = {isa = PBXBuildFile; fileRef = 1E23D7250CED53AA005859B9 /* Launcher.c */; };
 		1E23D73A0CED548E005859B9 /* difile.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1E536EF50CEC8A1E002E86F7 /* difile.icns */; };
 		1E2A19530DF0FF7700C8A956 /* Release Notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1E2A19520DF0FF7700C8A956 /* Release Notes.txt */; };
 		1E30765B1078EFBD00ED4D31 /* DXDStringScannerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E3076551078EE1F00ED4D31 /* DXDStringScannerTest.m */; };
@@ -89,6 +88,7 @@
 		6DB1DD9208B3A289004F6FFB /* gdc.pbcompspec in Resources */ = {isa = PBXBuildFile; fileRef = 6DB1DD8708B3A289004F6FFB /* gdc.pbcompspec */; };
 		6DD2FA0908C39D51003CE4D3 /* XCPBuildSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DD2FA0808C39D51003CE4D3 /* XCPBuildSystem.m */; };
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
+		EB1C93862C0B2C0F001517C1 /* Launcher.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1C93852C0B2C0F001517C1 /* Launcher.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -241,6 +241,7 @@
 		6DB1DD8808B3A289004F6FFB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DB1DDED08B3A33A004F6FFB /* D for Xcode.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "D for Xcode.xcplugin"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DD2FA0808C39D51003CE4D3 /* XCPBuildSystem.m */ = {isa = PBXFileReference; fileEncoding = 5; lastKnownFileType = sourcecode.c.objc; name = XCPBuildSystem.m; path = Headers/XCPBuildSystem.m; sourceTree = "<group>"; };
+		EB1C93852C0B2C0F001517C1 /* Launcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Launcher.m; path = "Launcher App/Launcher.m"; sourceTree = "<group>"; };
 		EB3C16D82C0891DB00EBEE78 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EB3C16D92C0891DB00EBEE78 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/com.michelf.dxcode.dmd.strings; sourceTree = "<group>"; };
 		EB3C16DA2C0891DB00EBEE78 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/com.michelf.dxcode.gdc.strings; sourceTree = "<group>"; };
@@ -301,6 +302,7 @@
 		089C166AFE841209C02AAC07 /* OCamlPlugin */ = {
 			isa = PBXGroup;
 			children = (
+				EB1C93852C0B2C0F001517C1 /* Launcher.m */,
 				1E6951450CF30FA200C137EF /* License - GPL 2.0.txt */,
 				1E2A19520DF0FF7700C8A956 /* Release Notes.txt */,
 				6D209C4508EBCCC800E52803 /* Xcode API */,
@@ -612,7 +614,7 @@
 				LastUpgradeCheck = 1540;
 			};
 			buildConfigurationList = 6D4E1A6108560B2700084599 /* Build configuration list for PBXProject "D for Xcode" */;
-			compatibilityVersion = "Xcode 3.1";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 1;
 			knownRegions = (
@@ -762,7 +764,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E23D7380CED5488005859B9 /* Launcher.c in Sources */,
+				EB1C93862C0B2C0F001517C1 /* Launcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

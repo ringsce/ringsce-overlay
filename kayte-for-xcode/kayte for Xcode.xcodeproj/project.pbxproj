@@ -3,26 +3,8 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 56;
 	objects = {
-
-/* Begin PBXAggregateTarget section */
-		1EF3C7D411539BD0001B82F7 /* D for Xcode.mpkg */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 1EF3C7D811539BD8001B82F7 /* Build configuration list for PBXAggregateTarget "D for Xcode.mpkg" */;
-			buildPhases = (
-				1EF3C7D311539BD0001B82F7 /* Prepare Contents */,
-				1EF3CBFA11555EDF001B82F7 /* Create Package */,
-			);
-			dependencies = (
-				1EF3C7E21153A777001B82F7 /* PBXTargetDependency */,
-				1EF3C7E01153A774001B82F7 /* PBXTargetDependency */,
-				1EF3C7DE1153A772001B82F7 /* PBXTargetDependency */,
-			);
-			name = "D for Xcode.mpkg";
-			productName = Packaging;
-		};
-/* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
 		1E01E47A0DED6B7E00CE9033 /* DXDNumberScannerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E01E4790DED6B7D00CE9033 /* DXDNumberScannerTest.m */; };
@@ -105,27 +87,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 1ECD11F7107105FD00CFD074;
 			remoteInfo = "D for Xcode UI";
-		};
-		1EF3C7DD1153A772001B82F7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1EF3C77111529A2F001B82F7;
-			remoteInfo = "dmd2-redirect";
-		};
-		1EF3C7DF1153A774001B82F7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1EF3C75A115298B8001B82F7;
-			remoteInfo = "dmd1-redirect";
-		};
-		1EF3C7E11153A777001B82F7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
-			remoteInfo = "D for Xcode";
 		};
 		1EF3C8251153AAF3001B82F7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -614,7 +575,7 @@
 				LastUpgradeCheck = 1540;
 			};
 			buildConfigurationList = 6D4E1A6108560B2700084599 /* Build configuration list for PBXProject "kayte for Xcode" */;
-			compatibilityVersion = "Xcode 3.1";
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 1;
 			knownRegions = (
@@ -631,7 +592,6 @@
 				1EC647B30DABA85300DD52F0 /* Unit Tests */,
 				1EF3C75A115298B8001B82F7 /* kdc1-redirect */,
 				1EF3C77111529A2F001B82F7 /* kdc2-redirect */,
-				1EF3C7D411539BD0001B82F7 /* D for Xcode.mpkg */,
 			);
 		};
 /* End PBXProject section */
@@ -714,34 +674,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-		1EF3C7D311539BD0001B82F7 /* Prepare Contents */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Prepare Contents";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\nif [ \"$CONFIGURATION\" != \"Release\" ]\nthen\n\techo \"error: Attempt to package with configuration '$CONFIGURATION'. Can only package in 'Release' configuration.\"\n\texit -1\nfi\n\ncd \"$SRCROOT/Installer\"\nsh prepare-contents.sh\n";
-		};
-		1EF3CBFA11555EDF001B82F7 /* Create Package */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Create Package";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\n# Remove old package\nrm -rf \"$TARGET_BUILD_DIR/$TARGET_NAME\"\n\n# Create new package\n$DEVELOPER_BIN_DIR/packagemaker \\\n\t--doc \"$SRCROOT/Installer/D for Xcode.pmdoc\" \\\n\t--out \"$TARGET_BUILD_DIR/$TARGET_NAME\"";
 		};
 		6DC2AF6E0A33728000AA574F /* Install Custom Icon */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -838,21 +770,6 @@
 			isa = PBXTargetDependency;
 			target = 1ECD11F7107105FD00CFD074 /* Kayte for Xcode UI */;
 			targetProxy = 1ECD1243107108D400CFD074 /* PBXContainerItemProxy */;
-		};
-		1EF3C7DE1153A772001B82F7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1EF3C77111529A2F001B82F7 /* kdc2-redirect */;
-			targetProxy = 1EF3C7DD1153A772001B82F7 /* PBXContainerItemProxy */;
-		};
-		1EF3C7E01153A774001B82F7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1EF3C75A115298B8001B82F7 /* kdc1-redirect */;
-			targetProxy = 1EF3C7DF1153A774001B82F7 /* PBXContainerItemProxy */;
-		};
-		1EF3C7E21153A777001B82F7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8D5B49AC048680CD000E48DA /* Kayte for Xcode */;
-			targetProxy = 1EF3C7E11153A777001B82F7 /* PBXContainerItemProxy */;
 		};
 		1EF3C8261153AAF3001B82F7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1127,32 +1044,6 @@
 			};
 			name = Release;
 		};
-		1EF3C7D511539BD0001B82F7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				COPY_PHASE_STRIP = NO;
-				DEAD_CODE_STRIPPING = YES;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
-				PRODUCT_NAME = Packaging;
-			};
-			name = Debug;
-		};
-		1EF3C7D611539BD0001B82F7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				COPY_PHASE_STRIP = YES;
-				DEAD_CODE_STRIPPING = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
-				PRODUCT_NAME = Packaging;
-				ZERO_LINK = NO;
-			};
-			name = Release;
-		};
 		6D4E1A5E08560B2700084599 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1329,15 +1220,6 @@
 			buildConfigurations = (
 				1EF3C77611529A2F001B82F7 /* Debug */,
 				1EF3C77711529A2F001B82F7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1EF3C7D811539BD8001B82F7 /* Build configuration list for PBXAggregateTarget "D for Xcode.mpkg" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1EF3C7D511539BD0001B82F7 /* Debug */,
-				1EF3C7D611539BD0001B82F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
