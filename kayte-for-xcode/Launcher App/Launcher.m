@@ -51,22 +51,31 @@ void openFromAppleEvent(const AppleEvent *event, LSLaunchFlags launchOption) {
             if (err != noErr) break;
         }
         if (err == noErr) {
-            LSApplicationParameters params;
-            FSRef app;
-
-            err = LSFindApplicationForInfo(kLSUnknownCreator, CFSTR("com.apple.xcode"), NULL, &app, NULL);
+            CFURLRef appURL = NULL;
+            err = LSCopyApplicationURLsForBundleIdentifier(kLSUnknownCreator, CFSTR("com.apple.xcode"));
 
             if (err == noErr) {
-                params.version = 0;
-                params.flags = launchOption;
-                params.application = &app;
-                params.asyncLaunchRefCon = NULL;
-                params.environment = NULL;
-                params.argv = NULL;
-                params.initialEvent = NULL;
-
-                LSOpenItemsWithRole(documents, documentCount,
-                                    kLSRolesAll, NULL, &params, NULL, NULL);
+                for (long i = 0; i < documentCount; i++) {
+                    UInt8 fsPath[PATH_MAX];
+                    if (FSRefMakePath(&documents[i], fsPath, sizeof(fsPath)) == noErr) {
+                        CFURLRef fileURL = CFURLCreateFromFileSystemRepresentation(kCFAllocatorDefault, fsPath, strlen((char*)fsPath), false);
+                        if (fileURL) {
+                            CFArrayRef filesToOpen = CFArrayCreate(kCFAllocatorDefault, (const void**)&fileURL, 1, &kCFTypeArrayCallBacks);
+                            if (filesToOpen) {
+                                LSLaunchURLSpec launchSpec;
+                                launchSpec.appURL = appURL;
+                                launchSpec.itemURLs = filesToOpen;
+                                launchSpec.passThruParams = NULL;
+                                launchSpec.launchFlags = launchOption;
+                                launchSpec.asyncRefCon = NULL;
+                                LSOpenFromURLSpec(&launchSpec, NULL);
+                                CFRelease(filesToOpen);
+                            }
+                            CFRelease(fileURL);
+                        }
+                    }
+                }
+                CFRelease(appURL);
             }
         }
 
