@@ -1,0 +1,27 @@
+<!DOCTYPE UI SYSTEM "ui.dtd">
+<UI>
+  <Window>
+    <Title>Welcome Window</Title>
+    <Content>
+      <Map>
+        <AxisX>X Axis</AxisX>
+        <AxisY>Y Axis</AxisY>
+      </Map>
+      <MiniMap>
+        <AxisX>X Axis</AxisX>
+        <AxisY>Y Axis</AxisY>
+      </MiniMap>
+      <AmmoCountChart>
+        <AxisX>X Axis</AxisX>
+        <AxisY>Y Axis</AxisY>
+      </AmmoCountChart>
+      <Buttons>Button 1</Buttons>
+      <Buttons>Button 2</Buttons>
+      <ListView>List Item 1</ListView>
+      <ListView>List Item 2</ListView>
+      <Chart>Chart Data</Chart>
+      <Pie>Pie Data</Pie>
+      <ProgressBar>50%</ProgressBar>
+    </Content>
+  </Window>
+</UI>
