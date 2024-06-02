@@ -11,15 +11,27 @@
     "sourcePaths": [
         "."
     ],
-    "targetType": "library",
     "targetName": "kaytec",
-    "targetPath": "lib",
-    "targetSuffix": "a",
-    "dflags": [
-        "-link-defaultlib-shared=false"
+    "sourceFiles": [
+        "main.d",
+        "vm.d",
+        "updater.d",
+        "pk3_manager.d",
+        "xml_parser.d",
+        "threading.d",
+        "HTMLParser.d",
+        "CSSParser.d",
+        "HTMLParser.d",
+        "EACCES.d"
     ],
-    "lflags": [
-        "-flto=thin"
-    ]
-   
+    "targetPath": "bin",
+    "targetType": "executable",
+    "architectures": [
+        "x86_64",  // macOS Intel
+        "aarch64", // macOS ARM
+        "x86_64",  // Linux x86_64
+        "aarch64"  // Linux ARM64
+    ],
+    "dflags-ldc": ["-link-defaultlib-shared=false"],
+    "lflags-ldc": ["-flto=thin"]
 }
