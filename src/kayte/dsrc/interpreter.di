@@ -1,4 +1,4 @@
-module interpreter;
+module kaytec.Interpreter;
 
 extern(C++) {
     class Interpreter {

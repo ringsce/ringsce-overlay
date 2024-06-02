@@ -1,12 +1,10 @@
 // main.d
-
-import std.stdio;
 import std.datetime;
 import std.concurrency;
 
 import updater;
 import pk3_manager;
-import xml_reader;
+//import xml_reader;
 import interpreter;
 
 string pk3Filename = "system.pk3";
@@ -18,7 +16,7 @@ void main() @safe {
     generatePk3(pk3Filename, cloneDir);
 
     // Assuming parseXmlComments is a safe function
-    parseXmlComments("./ui/ui.xml");
+    //parseXmlComments("../ui/ui.xml");
 
     while (true) {
         updateRepository();

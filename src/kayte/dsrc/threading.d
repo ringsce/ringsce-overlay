@@ -1,3 +1,5 @@
+module kaytec.Threading;
+
 import core.stdc.stdio : printf;
 import core.sys.posix.pthread;
 import core.stdc.stdlib : malloc, free;

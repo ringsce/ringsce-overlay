@@ -1,4 +1,5 @@
 // vm.d
+module kaytec.VM;
 
 import std.stdio;
 import std.file;

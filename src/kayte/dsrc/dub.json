@@ -5,7 +5,8 @@
         "Pedro Dias Vicente"
     ],
     "dependencies": {
-        "dxml": "~>0.4.0"
+        "dxml": "~>0.4.0",
+        "vibe-d": "~>0.9.4"
     },
     "sourceFiles": [
         "main.d",
@@ -14,7 +15,7 @@
         "pk3_manager.d",
         "xml_parser.d",
         "threading.d",
-        "interpreter.di"
+        "EACCES.d"
     ],
     "targetPath": "bin",
     "targetType": "executable",
