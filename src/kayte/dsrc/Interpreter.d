@@ -7,8 +7,17 @@ import std.algorithm;
 import std.exception;
 
 class Interpreter {
+private:
+    string script;
+    string[] codeSnippets;
+    string[] pascalKeywords;
+
 public:
-    this() {}
+    this() {
+        initializeAI();
+        initializeKeywords();
+    }
+
     ~this() {}
 
     bool loadScript(const string scriptPath) {

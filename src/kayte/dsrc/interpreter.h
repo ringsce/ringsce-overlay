@@ -1,8 +1,6 @@
 #pragma once
 
-#include <QObject>
 #include <QString>
-#include <QDomDocument>
 #include <vector>
 #include <unordered_set>
 
@@ -10,15 +8,12 @@
  * @brief The Interpreter class provides functionalities to interpret Object Pascal scripts,
  * load and parse XML content, and offer AI-based code suggestions.
  */
-class Interpreter : public QObject {
-    Q_OBJECT
-
+class Interpreter {
 public:
     /**
      * @brief Constructor for Interpreter.
-     * @param parent The parent QObject.
      */
-    explicit Interpreter(QObject *parent = nullptr);
+    Interpreter();
 
     /**
      * @brief Destructor for Interpreter.
@@ -82,9 +77,3 @@ private:
      */
     void initializeKeywords();
 };
-namespace kayte {
-    class Interpreter {
-    public:
-        void run();
-    };
-}
