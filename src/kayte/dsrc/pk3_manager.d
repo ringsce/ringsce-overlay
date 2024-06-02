@@ -3,7 +3,7 @@ import std.stdio;
 import std.file;
 import std.zip;
 
-void generatePk3(string pk3Filename, string sourceDir) {
+void generatePk3(string pk3Filename, string sourceDir) @safe{
     auto archive = new ZipArchive;
 
     string[] folders = ["sounds", "assets", "objects", "scripts"];

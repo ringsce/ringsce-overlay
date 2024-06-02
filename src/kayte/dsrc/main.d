@@ -1,4 +1,5 @@
 // main.d
+
 import std.stdio;
 import std.datetime;
 import std.concurrency;
@@ -9,12 +10,13 @@ import xml_reader;
 
 string pk3Filename = "system.pk3";
 
-void main() {
+void main() @safe {
     writeln("Starting GitHub repository updater...");
 
     cloneRepository();
     generatePk3(pk3Filename, cloneDir);
 
+    // Assuming parseXmlComments is a safe function
     parseXmlComments("./ui/ui.xml");
 
     while (true) {

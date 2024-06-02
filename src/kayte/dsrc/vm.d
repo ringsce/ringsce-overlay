@@ -1,11 +1,9 @@
 // vm.d
+
 import std.stdio;
-import std.zip;
+import std.file;
 
-import pk3_manager;
-import xml_reader;
-
-void main() {
+void main() @safe {
     string pk3Filename = "system.pk3";
     string sourceDirectory = "scripts";
 
@@ -17,8 +15,10 @@ void main() {
         writeln("Source directory ", sourceDirectory, " does not exist.");
     }
 
+    // For simplicity, let's assume parseXmlComments is a safe function
     parseXmlComments("path/to/your/xmlfile.xml");
 
+    // For simplicity, let's assume writing to file is safe
     archive.write(pk3Filename);
     writeln(pk3Filename, " generated successfully.");
 }
