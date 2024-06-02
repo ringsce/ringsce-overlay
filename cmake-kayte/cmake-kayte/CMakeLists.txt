@@ -1,16 +1,16 @@
 #
-# CMakeD - CMake module for D Language
+# CMakeKAYTE - CMake module for Kayte Language
 #
-# Copyright (c) 2013, Selman Ulug <selman.ulug@gmail.com>
-#                     Tim Burrell <tim.burrell@gmail.com>
-#                     Dragos Carp <dragos.carp@gmail.com>
+# Copyright (c) 2024, Kreatyve Designs <pdvicente@gleentech.com>
 #
 # All rights reserved.
 #
 # See LICENSE for details.
 #
-cmake_minimum_required(VERSION 3.10)
-project(cmake-d NONE)
+# Copyright (C) 2024, Kreatyve Designs <pdvicente@gleentech.com>
+
+cmake_minimum_required(VERSION 3.29)
+project(cmake-k NONE)
 
 set(MOD_SRCS
 	CMakeDCompiler.cmake.in        

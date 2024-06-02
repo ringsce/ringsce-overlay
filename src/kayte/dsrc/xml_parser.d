@@ -1,27 +1,22 @@
+// xml_reader.d
 import std.stdio;
-import std.xml;
 import std.file;
+import dxml.document;
 
 void parseXmlComments(string xmlFilePath) {
     // Read the content of the XML file
     string xmlContent = readText(xmlFilePath);
 
-    // Parse the content into an XmlDocument
-    XmlDocument document;
-    try {
-        document = parseString(xmlContent);
-    } catch (Exception e) {
-        writeln("Failed to parse XML file: ", e.msg);
-        return;
-    }
+    // Parse the content into a Document
+    auto document = parseDocument!(true)(xmlContent);
 
     writeln("XML Comments found:");
     parseNodeForComments(document.root);
 }
 
-void parseNodeForComments(XmlNode node) {
+void parseNodeForComments(Node node) {
     // Check if the node itself is a comment
-    if (node.type == XmlNodeType.comment) {
+    if (node.type == NodeType.comment) {
         writeln(node.text);
     }
 
@@ -29,9 +24,4 @@ void parseNodeForComments(XmlNode node) {
     foreach (child; node.children) {
         parseNodeForComments(child);
     }
-}
-
-void main() {
-    string xmlFilePath = "path/to/your/xmlfile.xml";
-    parseXmlComments(xmlFilePath);
 }

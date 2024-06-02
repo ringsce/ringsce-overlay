@@ -1,0 +1,21 @@
+{
+    "name": "kaytec",
+    "description": "A project that updates files from GitHub, generates PK3 files, and parses XML comments.",
+    "authors": [
+        "Pedro Dias Vicente"
+    ],
+    "dependencies": {
+        "dxml": "~>0.4.0"
+    },
+    "sourceFiles": [
+        "main.d",
+        "vm.d",
+        "updater.d",
+        "pk3_manager.d",
+        "xml_parser.d"
+    ],
+    "targetPath": "bin",
+    "targetType": "executable",
+    "dflags-ldc": ["-link-defaultlib-shared=false"],
+    "lflags-ldc": ["-flto=thin"]
+}
