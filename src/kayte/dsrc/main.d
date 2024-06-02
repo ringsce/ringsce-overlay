@@ -5,7 +5,6 @@ import std.concurrency;
 import updater;
 import pk3_manager;
 //import xml_reader;
-import interpreter;
 
 string pk3Filename = "system.pk3";
 

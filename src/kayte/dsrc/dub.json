@@ -8,17 +8,18 @@
         "dxml": "~>0.4.0",
         "vibe-d": "~>0.9.4"
     },
-    "sourceFiles": [
-        "main.d",
-        "vm.d",
-        "updater.d",
-        "pk3_manager.d",
-        "xml_parser.d",
-        "threading.d",
-        "EACCES.d"
+    "sourcePaths": [
+        "."
     ],
-    "targetPath": "bin",
-    "targetType": "executable",
-    "dflags-ldc": ["-link-defaultlib-shared=false"],
-    "lflags-ldc": ["-flto=thin"]
+    "targetType": "library",
+    "targetName": "kaytec",
+    "targetPath": "lib",
+    "targetSuffix": "a",
+    "dflags": [
+        "-link-defaultlib-shared=false"
+    ],
+    "lflags": [
+        "-flto=thin"
+    ]
+   
 }
