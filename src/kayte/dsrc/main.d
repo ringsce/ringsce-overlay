@@ -7,6 +7,7 @@ import std.concurrency;
 import updater;
 import pk3_manager;
 import xml_reader;
+import interpreter;
 
 string pk3Filename = "system.pk3";
 
@@ -24,5 +25,11 @@ void main() @safe {
         generatePk3(pk3Filename, cloneDir);
         writeln("Waiting for ", to!string(updateInterval.total!"seconds"), " seconds before the next check...");
         Thread.sleep(updateInterval);
+
+        // Interpreter runnable 
+        Interpreter interpreter = new Interpreter();
+        interpreter.loadScript("path/to/script");
+        writeln(interpreter.run());
+
     }
 }

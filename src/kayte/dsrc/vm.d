@@ -3,6 +3,17 @@
 import std.stdio;
 import std.file;
 
+void processFiles(string directory, ZipArchive archive) {
+    foreach (file; dirEntries(directory, SpanMode.depth)) {
+        if (isFile(file) && (file.endsWith(".kayte") || file.endsWith(".k"))) {
+            string fileName = file.baseName;
+            string filePathInArchive = "scripts/" ~ fileName;
+            archive.add(filePathInArchive, read(file));
+            writeln("Added ", file, " to archive as ", filePathInArchive);
+        }
+    }
+}
+
 void main() @safe {
     string pk3Filename = "system.pk3";
     string sourceDirectory = "scripts";
@@ -16,7 +27,7 @@ void main() @safe {
     }
 
     // For simplicity, let's assume parseXmlComments is a safe function
-    parseXmlComments("path/to/your/xmlfile.xml");
+    parseXmlComments("../ui//ui.xml");
 
     // For simplicity, let's assume writing to file is safe
     archive.write(pk3Filename);

@@ -12,7 +12,9 @@
         "vm.d",
         "updater.d",
         "pk3_manager.d",
-        "xml_parser.d"
+        "xml_parser.d",
+        "threading.d",
+        "interpreter.di"
     ],
     "targetPath": "bin",
     "targetType": "executable",
