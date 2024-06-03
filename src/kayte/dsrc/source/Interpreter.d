@@ -2,18 +2,34 @@ module kaytec.Interpreter;
 
 import std.stdio;
 import std.string;
-import std.container.array;
-import std.algorithm;
-import std.exception;
 
 class Interpreter {
 private:
     string script;
     string[] codeSnippets;
     string[] pascalKeywords;
+    bool verbose;
+    bool showVersion;
 
 public:
-    this() {
+    this(string[] args) {
+        this.verbose = false;
+        this.showVersion = false;
+
+        // Parse command-line arguments
+        foreach (arg; args[1..$]) {
+            if (arg == "--version") {
+                this.showVersion = true;
+            } else if (arg == "-v") {
+                this.verbose = true;
+            }
+        }
+
+        if (this.showVersion) {
+            writeln("Interpreter Version 1.0");
+            return;
+        }
+
         initializeAI();
         initializeKeywords();
     }

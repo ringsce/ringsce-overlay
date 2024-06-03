@@ -32,6 +32,6 @@
         "x86_64",  // Linux x86_64
         "aarch64"  // Linux ARM64
     ],
-    "dflags-ldc": ["-link-defaultlib-shared=false"],
-    "lflags-ldc": ["-flto=thin"]
+    "dflags-ldc": ["-link-defaultlib-shared=false -lpthread"],
+    "lflags-ldc": ["-flto=thin -pthread"]
 }

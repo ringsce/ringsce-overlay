@@ -1,0 +1,11 @@
+{
+    "name": "interpreter",
+    "description": "Library for VM functionality",
+    "authors": ["Pedro Dias Vicente"],
+    "dependencies": {},
+    "targetName": "vm",
+    "targetType": "library",
+    "sourceFiles": ["source/Interpreter.d"],
+    "targetPath": "lib",
+    "targetSuffix": "dat"
+}

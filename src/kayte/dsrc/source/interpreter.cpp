@@ -127,4 +127,7 @@ std::string Interpreter::translateToBytecode(const std::string &pascalCode) {
                 }
                 std::string value = tokens[1].substr(1, tokens[1].length() - 2); // Remove quotes
                 bytecode += "WRITELN " + value + "\n";
-            } else if (tokens[0] == "pk3_read
+            } else if (tokens[0] == "pk3_read");
+
+ }
+
