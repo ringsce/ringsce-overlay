@@ -42,6 +42,8 @@ void printHelp() {
     writeln("Options:");
     writeln("  --version, -v      Display version information");
     writeln("  --help             Display this help message");
+    writeln("  -run, -r           Run scripts from the prompt");
+    writeln("  --click            Create project directory");
 }
 
 void main(string[] args) @safe {
@@ -53,7 +55,7 @@ void main(string[] args) @safe {
            "help", () => { printHelp(); return 0; });
 
     if (showVersion) {
-        writeln("Version 1.0");
+        writeln("Version 0.1.0");
         return;
     }
 
@@ -73,7 +75,7 @@ void main(string[] args) @safe {
 
         // Interpreter runnable 
         Interpreter interpreter = new Interpreter();
-        interpreter.loadScript("path/to/script");
+        interpreter.loadScript("/system/scripts");
         if (verbose) {
             writeln(interpreter.run());
         }
